@@ -49,5 +49,5 @@ function controladorGet (peticion, respuesta) {
 
 // Posta en marcha da aplicación de Express
 app.listen( 8000, function () {
-    console.log("Express traballando...");
+    console.log("Express traballandoo...");
 })
