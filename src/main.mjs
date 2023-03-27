@@ -19,6 +19,8 @@ let tarefas = [
 // Definicions de endpoints
 app.post("/tarefas/", controladorPost)
 app.get("/tarefas/", controladorGet)
+app.put("/tarefas/", controladorPut)
+app.delete("/tarefas/", controladorDelete)
 
 // Controladores executados polos endpoints
 function controladorPost (peticion, respuesta) {
@@ -26,6 +28,18 @@ function controladorPost (peticion, respuesta) {
     respuesta.status(201)
     respuesta.send("Ok")
 }
+function controladorPut (peticion,respuesta){
+    let position=tarefas.findIndex( estaTarefa=>estaTarefa.id===peticion.body.id)            
+    console.log(position)
+    tarefas.splice(position,1,peticion.body)
+    
+}
+function controladorDelete (peticion,respuesta){
+    let position =tarefas.findIndex( estaTarefa=>estaTarefa.id===peticion.body.id)
+}      console.log(position)
+tarefa.splice(position,1)  
+    
+
 
 function controladorGet (peticion, respuesta) {
     respuesta.status(200)
